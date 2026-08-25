@@ -1,0 +1,83 @@
+/*el asterisco es el selector universal*/
+*{
+    /* elimino margenes */
+    margin: 0;
+    /* elimino el relleno */
+    padding: 0%;
+    /*evito que el ancho se sume al relleno*/
+    box-sizing: border-box;
+}
+
+/*estilos generales*/
+/*selector a partir del nombre*/
+
+body{
+    background: url(Assets/imagen-back.jpg)center 0 no-repeat;
+    background-size: cover;
+}
+
+main{
+    /*configuro el ancho de todo*/
+    width: 100%;
+    max-width: 700px;
+    /*centro el contenedor*/
+    /*margin top right bottom left*/
+    margin: 0 auto 0 auto;
+    /*otra opcion margin: 0 auto; */
+    /*fondo de texto*/
+    background-color: rgba(42, 25, 25, 0.7);
+    padding: 40px;
+}
+
+img {
+    /*configuracion ancho al 100%*/
+    width: 100%;
+}
+
+h1{
+    /*familia tipografica*/
+    font-family: "New Rocker", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 80px;
+    /*color de fuente*/
+    color: rgb(255, 60, 30);
+    /*alineacion de texto*/
+    text-align: center;
+    margin: 20px 0 20px 0;
+}
+
+p{
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    /*color de fuente*/
+    color: rgb(255, 198, 188);
+    /*alineacion de texto*/
+    text-align: justify; 
+    margin: 20px 0 20px 0;    
+}
+
+/*seleccion etiqueta por clase*/
+
+.subtitulo-pf {
+   /*familia tipografica*/
+    font-family: "New Rocker", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    /*color de fuente*/
+    color: rgb(250, 232, 229);
+    /*alineacion de texto*/
+    text-align: center; 
+    margin: 20px 0 20px 0;
+}
+
+/* seleccion por id*/
+
+#parrafo-destacado {
+    color: rgb(201, 72, 32) !important; 
+    font-weight: 500;
+}
