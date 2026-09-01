@@ -1,0 +1,150 @@
+/* 
+0. Estilos generales
+1. Tipografias
+2. cabecera
+
+*/
+
+/*Estilos generales*/
+
+*{
+    margin:0;
+    padding:0;
+
+    /* evita que el ancho se sume al padding */
+    box-sizing: border-box;
+
+}
+
+:root {
+    --color-principal: #007EA7;
+    --color-acento: #80CED7;
+    --color-acento2:#559093;
+    --color-texto: #1f1e27;
+
+}
+
+.hide-element{
+  display:none;
+
+}
+
+.flex-elements {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px;
+}
+
+img{
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+/* tipografias */
+
+h1{
+
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  color: var(--color-principal)
+
+}
+
+h2{
+
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+  color: var(--color-acento2)
+
+}
+
+h3{
+
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  color: var(--color-acento2)
+
+}
+
+p{
+
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  font-style: normal;   
+  font-size: 14px;
+  text-align: justify;
+  color: var(--color-texto)
+
+}
+
+/* cabecera */
+
+#cabecera {
+
+    /* border bottom: grosor, estilo y color */
+    border-bottom: 3px solid var(--color-principal);
+    
+    /*relleno: top right bottom left*/
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bt-principal{
+
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal; 
+    font-size: 16px;
+    text-decoration: none;
+    color: #ffffff;
+    background: var(--color-acento);
+    padding: 8px 15px;
+    border-radius: 5%;
+    text-align: center;
+
+     /*animacion por transicion duracion caracteristicas y animacion*/
+
+    transition: 0.3s all linear;
+    }
+
+.bt-principal:hover{
+  background: var(--color-acento2);     
+  padding: 8px 20px 8px 20px;
+
+}
+
+/*===================================*/
+
+@media (max-width: 600px) {
+
+  #cabecera{
+    flex-direction: column;
+
+  }
+
+  #cabecera > nav{
+    width: 100%;
+
+  }
+
+  .bt-principal{
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-radius: 0%;
+    border-bottom: 1px solid var(--color-principal);
+  }
+}
+
+
