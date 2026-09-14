@@ -1,21 +1,20 @@
 /* 
-==================================================
+
   0. Estilos generales y variables
   1. Tipografías 
   2. Cabecera y Navegación principal
-  3. Sección: Actividades destacadas 
-  4. Sección: Descubre Leticia 
-  5. Sección: Destacados de la semana 
+  3. Sección: Actividades destacadas
+  4. Sección: Descubre Leticia
+  5. Sección: Destacados de la semana
   6. Sección: Ubicación y Mapa
-  7. Pie de página 
-  8. Adaptación a dispositivos móviles 
-==================================================
+  7. Pie de página
+  8. Adaptación a dispositivos móviles
+
 */
 
 
-/* -----------------------------------------------
-   0. Estilos generales y variables
------------------------------------------------ */
+/* 0. Estilos generales y variables */
+
 * {
     margin: 0;
     padding: 0;
@@ -23,37 +22,32 @@
 }
 
 :root {
-    /* Paleta de color institucional*/
-    --color-forest: #19532B;      
-    --color-kiwi: #9ABC04;         
-    --color-cream: #F7F5F0;       
-    --color-sunshine: #FFCA26;     
-    --color-carrot: #F86015;       
+    --color-aguamarina: #19532B;
+    --color-verde: #9ABC04;
+    --color-crema: #F7F5F0;
+    --color-amarillo: #FFCA26;
+    --color-naranja: #F86015;
     
-    --color-texto-main: #1C2820;   
-    --color-texto-muted: #4A584F;  
+    --color-texto-principal: #1C2820;
+    --color-texto-secundario: #4A584F;
     --color-blanco: #FFFFFF;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background-color: var(--color-cream);
-    color: var(--color-texto-main);
+    background-color: var(--color-crema);
+    color: var(--color-texto-principal);
     font-family: "Alegreya Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
     line-height: 1.6;
     overflow-x: hidden;
+    padding-top: 88px;
 }
 
 .hide-element {
     display: none;
 }
 
-/* Grilla flexible con excelente separación entre tarjetas */
 .flex-elements {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -68,9 +62,8 @@ img {
 }
 
 
-/* -----------------------------------------------
-   1. Tipografías
------------------------------------------------ */
+/* 1. Tipografías */
+
 h1 {
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
@@ -79,7 +72,7 @@ h1 {
     font-size: clamp(28px, 4vw, 42px);
     text-align: center;
     margin: 40px 0 20px 0;
-    color: var(--color-forest);
+    color: var(--color-aguamarina);
     letter-spacing: -0.5px;
 }
 
@@ -91,7 +84,7 @@ h2 {
     font-size: clamp(22px, 3vw, 30px);
     text-align: center;
     margin: 0 0 35px 0;
-    color: var(--color-forest);
+    color: var(--color-aguamarina);
 }
 
 h3 {
@@ -100,7 +93,7 @@ h3 {
     font-weight: 700;
     font-style: normal;
     font-size: 20px;
-    color: var(--color-forest);
+    color: var(--color-aguamarina);
     margin-bottom: 12px;
 }
 
@@ -110,14 +103,13 @@ p {
     font-style: normal;
     font-size: 17px;
     text-align: left;
-    color: var(--color-texto-muted);
+    color: var(--color-texto-secundario);
     line-height: 1.5;
 }
 
 
-/* -----------------------------------------------
-   2. Cabecera y Navegación principal
------------------------------------------------ */
+/* 2. Cabecera y Navegación principal */
+
 #cabecera {
     position: fixed;
     top: 0;
@@ -130,7 +122,7 @@ p {
     justify-content: space-between;
     padding: 16px 5%;
 
-    background: rgba(247, 245, 240, 0.7); /* --color-cream con transparencia */
+    background: rgba(247, 245, 240, 0.7);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -156,27 +148,20 @@ p {
     font-style: normal;
     font-size: 17px;
     text-decoration: none;
-    color: var(--color-forest);
-    background: var(--color-sunshine);
+    color: var(--color-aguamarina);
+    background: var(--color-amarillo);
     padding: 8px 20px;
     border-radius: 25px;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .bt-principal:hover {
-    background: var(--color-kiwi);     
+    background: var(--color-verde);     
     color: var(--color-blanco);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-body {
-    padding-top: 88px; /* ajusta según la altura real de tu header */
-}
-
-/* -----------------------------------------------
-   Sección de imagen de fondo (inicio)
------------------------------------------------ */
 #background-body {
     position: relative;
     min-height: 600px;
@@ -188,16 +173,14 @@ body {
 }
 
 
-/* -----------------------------------------------
-   3. Sección: Actividades destacadas (Gastronomía)
------------------------------------------------ */
+/* 3. Sección: Actividades destacadas */
+
 #actividades-destacadas { 
     padding: 60px 5%;
     max-width: 1280px;
     margin: 0 auto;
 }
 
-/* Tarjeta profesional con Glassmorphism */
 .articulo-index {
     padding: 24px;
     background: rgba(255, 255, 255, 0.75);
@@ -233,9 +216,8 @@ body {
     transform: scale(1.03);
 }
 
-/* Botón "ver más" de las tarjetas (Alegreya Sans 300 Light) */
 .bt-vermas {
-    background-color: var(--color-forest);
+    background-color: var(--color-aguamarina);
     padding: 10px 20px;
     border-radius: 10px;
     font-family: "Alegreya Sans", sans-serif;
@@ -251,24 +233,23 @@ body {
 }
 
 .bt-vermas:hover {
-    background-color: var(--color-carrot);
+    background-color: var(--color-naranja);
     color: var(--color-blanco);
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(248, 96, 21, 0.25);
 }
 
 
-/* -----------------------------------------------
-   4. Sección: Descubre Leticia (Video Multimedia)
------------------------------------------------ */
+/* 4. Sección: Descubre Leticia */
+
 #descubre-leticia {
-    background-color: var(--color-forest);
+    background-color: var(--color-aguamarina);
     padding: 70px 5%;
     text-align: center;
 }
 
 #descubre-leticia h2 {
-    color: var(--color-sunshine);
+    color: var(--color-amarillo);
 }
 
 #descubre-leticia div {
@@ -285,9 +266,8 @@ body {
 }
 
 
-/* -----------------------------------------------
-   5. Sección: Destacados de la semana (Imperdibles)
------------------------------------------------ */
+/* 5. Sección: Destacados de la semana */
+
 #imperdibles {
     padding: 70px 5%;
     max-width: 1280px;
@@ -295,9 +275,8 @@ body {
 }
 
 
-/* -----------------------------------------------
-   6. Sección: Ubicación y Mapa
------------------------------------------------ */
+/* 6. Sección: Ubicación y Mapa */
+
 .map-container {
     width: 100%;
     max-width: 1280px;
@@ -312,64 +291,78 @@ body {
 }
 
 
-/* -----------------------------------------------
-   7. Pie de página (Footer Institucional Compacto)
------------------------------------------------ */
+/* 7. Pie de página */
+
 footer {
-    background-color: var(--color-forest);
+    background-color: var(--color-aguamarina);
     color: var(--color-blanco);
-    padding: 35px 5%;
+    padding: 45px 5%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    border-top: 4px solid var(--color-kiwi);
+    justify-content: center;
+    text-align: center;
+    gap: 35px;
+    border-top: 4px solid var(--color-verde);
+    width: 100%;
 }
 
 .footer-brand {
-    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .footer-brand img {
-    max-height: 75px;
+    max-height: 80px;
     width: auto;
     object-fit: contain;
     opacity: 0.95;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .footer-brand img:hover {
     opacity: 1;
+    transform: scale(1.05);
 }
 
 footer > div {
-    display: flex;
-    gap: 45px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    align-items: start;
+    justify-items: center;
 }
 
 footer nav {
-    min-width: 140px;
+    width: 100%;
+    text-align: center;
 }
 
 footer h3 {
     font-family: "Quicksand", sans-serif;
     font-weight: 700;
     font-style: normal;
-    color: var(--color-sunshine);
-    font-size: 17px;
-    margin-bottom: 10px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 4px;
+    color: var(--color-amarillo);
+    font-size: 18px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 6px;
+    display: inline-block;
 }
 
 footer ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 footer ul li {
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    text-align: center;
 }
 
 footer ul li a {
@@ -379,19 +372,17 @@ footer ul li a {
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
-    transition: color 0.2s ease, padding-left 0.2s ease;
+    transition: color 0.2s ease;
     display: inline-block;
 }
 
 footer ul li a:hover {
-    color: var(--color-sunshine);
-    padding-left: 4px;
+    color: var(--color-amarillo);
 }
 
 
-/* -----------------------------------------------
-   8. Adaptación a dispositivos móviles (Responsive)
------------------------------------------------ */
+/* 8. Adaptación a dispositivos móviles */
+
 @media (max-width: 992px) {
     .flex-elements {
         grid-template-columns: repeat(2, 1fr);
@@ -428,10 +419,7 @@ footer ul li a:hover {
     }
 
     footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 30px 20px;
+        padding: 35px 20px;
         gap: 25px;
     }
 
@@ -439,7 +427,6 @@ footer ul li a:hover {
         flex-direction: column;
         align-items: center;
         gap: 25px;
-        width: 100%;
     }
 
     footer h3 {
