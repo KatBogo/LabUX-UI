@@ -340,3 +340,15 @@ img.is-missing { opacity: 0; }
   .hero__castle img, .hero__boats img { top: 8vh; height: 80vh; }
   .hero__castle img, .hero__boats img { -webkit-mask: none; mask: none; }
 }
+
+/* ---- Fog transition between the hero and the content (as in Figma) ---- */
+.hero__fade {
+  height: 60vh; bottom: -22vh; z-index: 3;
+  background: url("../img/niebla.png") center / 140% 100% no-repeat;
+  -webkit-mask: linear-gradient(transparent, #000 35%, #000 65%, transparent);
+          mask: linear-gradient(transparent, #000 35%, #000 65%, transparent);
+  opacity: .85;
+}
+.hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 30vh; background: linear-gradient(transparent, var(--azul-noche-900)); pointer-events: none; z-index: 2; }
+.hogwarts { z-index: 1; }
+.ornament { width: max-content; }
