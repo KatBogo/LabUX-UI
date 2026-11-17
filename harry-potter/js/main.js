@@ -89,6 +89,12 @@
     if (img.complete && img.naturalWidth === 0) swap(); else img.addEventListener('error', swap);
   });
 
+  /* ---------- Missing images: keep the layout clean ---------- */
+  document.querySelectorAll('img:not(.avatar)').forEach(img => {
+    const mark = () => img.classList.add('is-missing');
+    if (img.complete && img.naturalWidth === 0) mark(); else img.addEventListener('error', mark);
+  });
+
   /* ---------- Reviews carousel ---------- */
   const carousel = document.querySelector('.carousel');
   const track = carousel.querySelector('.carousel__track');

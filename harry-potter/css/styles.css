@@ -321,3 +321,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   .hero__castle, .hero__boats, .hero__content, .hero__cta { opacity: 1 !important; transform: none !important; }
   .hero__fog--top { opacity: .5; }
 }
+
+/* Images not uploaded yet */
+img.is-missing { opacity: 0; }
+.member img.is-missing, .plan > img.is-missing { opacity: 1; background: var(--azul-noche-700); color: transparent; font-size: 0; }
