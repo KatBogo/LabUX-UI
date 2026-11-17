@@ -325,3 +325,18 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* Images not uploaded yet */
 img.is-missing { opacity: 0; }
 .member img.is-missing, .plan > img.is-missing { opacity: 1; background: var(--azul-noche-700); color: transparent; font-size: 0; }
+
+/* ---- Hero layers: keep the whole castle visible on wide screens ---- */
+.hero__castle img, .hero__boats img {
+  position: absolute; left: 50%; width: auto; max-width: none; object-fit: contain;
+  -webkit-mask: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%);
+          mask: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%);
+}
+.hero__castle img, .hero__boats img { top: 2vh; height: 108vh; transform: translateX(-50%); }
+/* soft lake below the castle so the scene never ends in a hard line */
+.hero__sticky::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 14vh; background: linear-gradient(transparent, var(--azul-noche-900)); pointer-events: none; z-index: 1; }
+.hero__content, .hero__scroll { z-index: 2; }
+@media (orientation: portrait) {
+  .hero__castle img, .hero__boats img { top: 8vh; height: 80vh; }
+  .hero__castle img, .hero__boats img { -webkit-mask: none; mask: none; }
+}

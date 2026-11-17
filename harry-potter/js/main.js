@@ -43,14 +43,15 @@
 
     sky.style.transform = `translateY(${-p * 6}%) scale(1.08)`;                      // slow layer (0.3x)
     castle.style.opacity = 0.15 + reveal * 0.85;
-    castle.style.transform = `translateY(${-p * 12}%) scale(${1.06 - reveal * 0.06})`; // mid layer (0.6x)
+    const castleY = -p * 8;
+    castle.style.transform = `translateY(${castleY}%) scale(${1.06 - reveal * 0.06})`;          // mid layer (0.6x)
     boats.style.opacity = clamp(sail * 2);
-    boats.style.transform = `translateY(${18 - sail * 22}%) scale(${1.08 - sail * 0.08})`; // fast layer (1x)
+    boats.style.transform = `translateY(${castleY + (1 - sail) * 22}%) scale(${1.1 - sail * 0.1})`; // fast layer (1x), lands on the lake
     fog.style.opacity = 1 - reveal * 0.55;
     fog.style.transform = `translateY(${-reveal * 25 + sail * 15}vh)`;
     glow.style.opacity = 0.1 + reveal * 0.4;
     content.style.opacity = reveal;
-    content.style.transform = `translate(-50%, ${-50 - sail * 20}%)`;
+    content.style.transform = `translate(-50%, ${-50 - sail * 45}%)`;
     cta.classList.toggle('is-visible', sail > 0.55);
     scrollHint.style.opacity = 1 - range(p, 0.6, 0.9);
   }
