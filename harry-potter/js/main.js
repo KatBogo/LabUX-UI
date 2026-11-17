@@ -21,7 +21,7 @@
 
   /* ---------- Hero parallax (fog -> castle -> boats) ---------- */
   const hero = document.querySelector('.hero');
-  const sky = hero.querySelector('.hero__sky img');
+  const sky = hero.querySelector('.hero__sky');
   const castle = hero.querySelector('.hero__castle');
   const boats = hero.querySelector('.hero__boats');
   const fog = hero.querySelector('.hero__fog--top');
@@ -41,12 +41,13 @@
     // 0.35–0.85 : the boats glide across the lake
     const sail = range(p, 0.35, 0.85);
 
-    sky.style.transform = `translateY(${-p * 6}%) scale(1.08)`;                      // slow layer (0.3x)
+    // All layers end perfectly aligned (as in Figma); during the scroll each one moves at its own speed.
+    const base = -p * 10;                                                   // whole scene drifts up
+    sky.style.transform = `translateY(${base * 0.3}vh)`;                    // slow layer (0.3x)
     castle.style.opacity = 0.15 + reveal * 0.85;
-    const castleY = -p * 8;
-    castle.style.transform = `translateY(${castleY}%) scale(${1.06 - reveal * 0.06})`;          // mid layer (0.6x)
+    castle.style.transform = `translateY(${base * 0.3 + (1 - reveal) * 4}vh) scale(${1.05 - reveal * 0.05})`; // mid layer (0.6x)
     boats.style.opacity = clamp(sail * 2);
-    boats.style.transform = `translateY(${castleY + (1 - sail) * 22}%) scale(${1.1 - sail * 0.1})`; // fast layer (1x), lands on the lake
+    boats.style.transform = `translateY(${base * 0.3 + (1 - sail) * 30}vh)`; // fast layer (1x), lands on the lake
     fog.style.opacity = 1 - reveal * 0.55;
     fog.style.transform = `translateY(${-reveal * 25 + sail * 15}vh)`;
     glow.style.opacity = 0.1 + reveal * 0.4;
