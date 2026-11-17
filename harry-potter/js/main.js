@@ -19,53 +19,43 @@
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
-  /* ---------- Hero parallax (fog -> castle -> boats) ---------- */
-  const hero = document.querySelector('.hero');
-  const sky = hero.querySelector('.hero__sky');
-  const castle = hero.querySelector('.hero__castle');
-  const boats = hero.querySelector('.hero__boats');
-  const fog = hero.querySelector('.hero__fog--top');
-  const glow = hero.querySelector('.hero__glow');
-  const content = hero.querySelector('.hero__content');
-  const cta = hero.querySelector('.hero__cta');
-  const scrollHint = hero.querySelector('.hero__scroll');
+  /* ---------- Hero scene: scroll drives the Figma states (fog -> castle -> boats) ---------- */
+  const scene = document.querySelector('.scene');
+  const q = s => scene.querySelector(s);
+  const sky = q('.scene__sky'), castle = q('.scene__castle'), boats = q('.scene__boats'),
+        fog = q('.scene__fog'), glow = q('.scene__glow'), title = q('.scene__title'),
+        cta = q('.scene__cta'), hint = q('.scene__scroll');
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
-  const range = (p, start, end) => clamp((p - start) / (end - start));
+  const range = (p, s, e) => clamp((p - s) / (e - s));
+  const lerp = (a, b, t) => a + (b - a) * t;
 
-  function renderHero() {
-    const total = hero.offsetHeight - window.innerHeight;
-    const p = clamp(-hero.getBoundingClientRect().top / total); // 0 → 1 while scrolling the hero
+  function renderScene() {
+    const H = scene.offsetHeight;
+    const y = clamp(window.scrollY, 0, H);
+    const p = y / Math.max(1, H - window.innerHeight);   // 0 -> 1 while the scene is on screen
+    const reveal = range(p, 0, 0.3);                      // state 1 -> 2 : the fog lifts, the castle appears
+    const sail = range(p, 0.25, 0.65);                    // state 2 -> 3 : the boats glide on the lake
 
-    // 0.00–0.35 : the fog lifts and the castle is revealed
-    const reveal = range(p, 0, 0.35);
-    // 0.35–0.85 : the boats glide across the lake
-    const sail = range(p, 0.35, 0.85);
-
-    // All layers end perfectly aligned (as in Figma); during the scroll each one moves at its own speed.
-    const base = -p * 10;                                                   // whole scene drifts up
-    sky.style.transform = `translateY(${base * 0.3}vh)`;                    // slow layer (0.3x)
-    castle.style.opacity = 0.15 + reveal * 0.85;
-    castle.style.transform = `translateY(${base * 0.3 + (1 - reveal) * 4}vh) scale(${1.05 - reveal * 0.05})`; // mid layer (0.6x)
-    boats.style.opacity = clamp(sail * 2);
-    boats.style.transform = `translateY(${base * 0.3 + (1 - sail) * 30}vh)`; // fast layer (1x), lands on the lake
-    fog.style.opacity = 1 - reveal * 0.55;
-    fog.style.transform = `translateY(${-reveal * 25 + sail * 15}vh)`;
-    glow.style.opacity = 0.1 + reveal * 0.4;
-    content.style.opacity = reveal;
-    content.style.transform = `translate(-50%, ${-50 - sail * 45}%)`;
-    cta.classList.toggle('is-visible', sail > 0.55);
-    scrollHint.style.opacity = 1 - range(p, 0.6, 0.9);
+    sky.style.transform = `translateY(${y * 0.3}px)`;                                 // slow layer 0.3x
+    castle.style.opacity = lerp(0.12, 1, reveal);
+    castle.style.transform = `translateY(${y * 0.12}px) scale(${lerp(1.04, 1, reveal)})`; // 0.6x
+    boats.style.opacity = clamp(sail * 1.6);
+    boats.style.transform = `translateY(${(1 - sail) * 8}%) scale(${lerp(1.08, 1, sail)})`; // 1x, lands on the lake
+    glow.style.opacity = lerp(0.1, 0.45, reveal);
+    fog.style.top = `${lerp(8.3, 41.7, reveal)}%`;
+    fog.style.opacity = lerp(1, 0.6, Math.max(reveal, sail));
+    title.style.opacity = reveal;
+    cta.classList.toggle('is-visible', sail > 0.5);
+    hint.style.opacity = reveal > 0.15 ? 0 : 1;
   }
 
   if (!reduceMotion) {
     let ticking = false;
-    const onScroll = () => {
-      if (!ticking) { requestAnimationFrame(() => { renderHero(); ticking = false; }); ticking = true; }
-    };
+    const onScroll = () => { if (!ticking) { requestAnimationFrame(() => { renderScene(); ticking = false; }); ticking = true; } };
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
-    renderHero();
-  }
+    renderScene();
+  } else { hint.hidden = true; }
 
   /* ---------- Reveal on scroll ---------- */
   const reveals = document.querySelectorAll('.reveal');

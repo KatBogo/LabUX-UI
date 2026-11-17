@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=5">
+  <link rel="stylesheet" href="css/styles.css?v=7">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -34,32 +34,25 @@
   </header>
 
   <main id="main">
-    <!-- ===== HERO · PARALLAX ===== -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__sticky">
-        <div class="hero__layer hero__sky" data-speed="0.3" aria-hidden="true">
-          <img src="img/hero-fondo.jpg" alt="">
+    <!-- ===== HERO · PARALLAX (long scene, same layers and states as Figma) ===== -->
+    <section class="scene" aria-labelledby="hero-title">
+      <div class="scene__layer scene__sky" aria-hidden="true"><img src="img/hero-fondo.jpg" alt=""></div>
+      <div class="scene__glow" aria-hidden="true"></div>
+      <div class="scene__layer scene__castle"><img src="img/hero-castillo.png" alt="Hogwarts castle lit by golden windows on a rocky cliff above the Black Lake"></div>
+      <div class="scene__layer scene__boats"><img src="img/hero-botes.png" alt="First-year students crossing the Black Lake in small boats with lanterns"></div>
+      <div class="scene__fog" aria-hidden="true"></div>
+      <div class="scene__fade" aria-hidden="true"></div>
+      <div class="scene__title">
+        <h1 class="hero__title" id="hero-title">Hogwarts</h1>
+        <span class="ornament" aria-hidden="true"></span>
+        <div class="scene__cta">
+          <p class="highlight">The lanterns glow, the boats glide across the Black Lake and the castle opens its doors. Your story begins tonight.</p>
+          <a class="btn btn--gold" href="#hogwarts">Begin the journey</a>
         </div>
-        <div class="hero__glow" aria-hidden="true"></div>
-        <div class="hero__layer hero__castle" data-speed="0.6">
-          <img src="img/hero-castillo.png" alt="Hogwarts castle lit by golden windows on a rocky cliff at night">
-        </div>
-        <div class="hero__layer hero__boats" data-speed="1">
-          <img src="img/hero-botes.png" alt="First-year students crossing the Black Lake in small boats with lanterns">
-        </div>
-        <div class="hero__fog hero__fog--top" aria-hidden="true"></div>
-        <div class="hero__content">
-          <h1 class="hero__title" id="hero-title">Hogwarts</h1>
-          <span class="ornament" aria-hidden="true"></span>
-          <div class="hero__cta">
-            <p class="highlight">The lanterns glow, the boats glide across the Black Lake and the castle opens its doors. Your story begins tonight.</p>
-            <a class="btn btn--gold" href="#hogwarts">Begin the journey</a>
-          </div>
-        </div>
-        <p class="hero__scroll" aria-hidden="true">Scroll</p>
       </div>
-      <div class="hero__fade" aria-hidden="true"></div>
+      <p class="scene__scroll" aria-hidden="true">Scroll</p>
     </section>
+    <div class="scene-transition" aria-hidden="true"></div>
 
     <!-- ===== HOGWARTS ===== -->
     <section class="section hogwarts" id="hogwarts" aria-labelledby="hogwarts-title">
@@ -338,6 +331,6 @@
     <p class="footer__note">Fan project created for academic purposes. Harry Potter characters, names and related indicia are trademarks of Warner Bros. Entertainment Inc. Not affiliated with Universal Orlando Resort. © 2026</p>
   </footer>
 
-  <script src="js/main.js?v=5"></script>
+  <script src="js/main.js?v=7"></script>
 </body>
 </html>

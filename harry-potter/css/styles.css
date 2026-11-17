@@ -363,3 +363,53 @@ img.is-missing { opacity: 0; }
 .hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 30vh; background: linear-gradient(transparent, var(--azul-noche-900)); pointer-events: none; z-index: 2; }
 .hogwarts { z-index: 1; }
 .ornament { width: max-content; }
+
+/* =========================================================
+   HERO SCENE · replica of the Figma "Hero · Castillo y botes"
+   Desktop frame 1920 x 2400  ->  100vw x 125vw
+   Mobile frame   393 x 1300  ->  100vw x 331vw (layers 1040 wide, centered)
+   ========================================================= */
+.scene {
+  --h: 125vw; --lw: 100vw; --ll: 0vw;           /* layer box */
+  --fog-w: 156vw; --fog-l: -28vw; --fog-h: 52vw; /* fog of the castle */
+  position: relative; height: var(--h); overflow: hidden; background: var(--azul-noche-900);
+}
+.scene__layer { position: absolute; top: 0; left: var(--ll); width: var(--lw); height: var(--h); will-change: transform, opacity; }
+.scene__layer img { width: 100%; height: 100%; object-fit: fill; }
+.scene__castle { opacity: .12; transform: scale(1.04); transform-origin: 50% 0; }
+.scene__boats  { opacity: 0;   transform: scale(1.08); transform-origin: 50% 0; }
+.scene__glow { position: absolute; left: 16%; top: 6.25%; width: 68%; height: 37.5%; background: radial-gradient(closest-side, rgba(184,134,43,.9), transparent); filter: blur(60px); opacity: .1; }
+.scene__fog {
+  position: absolute; left: var(--fog-l); width: var(--fog-w); height: var(--fog-h); top: 8.3%;
+  background: url("../img/niebla.png") center / 100% 100% no-repeat;
+  -webkit-mask: linear-gradient(transparent, #000 30%, #000 70%, transparent); mask: linear-gradient(transparent, #000 30%, #000 70%, transparent);
+  will-change: transform, opacity;
+}
+.scene__fade { position: absolute; left: 0; right: 0; bottom: 0; height: 21.7%; background: linear-gradient(transparent, var(--azul-noche-900)); }
+.scene__title { position: absolute; left: 50%; top: 44.2%; width: min(820px, 90vw); transform: translateX(-50%); display: grid; justify-items: center; gap: var(--sp-16); text-align: center; opacity: 0; z-index: 2; }
+.scene__title .hero__title { font-size: clamp(2.6rem, 5vw, 5.5rem); }
+.scene__cta { display: grid; justify-items: center; gap: var(--sp-24); opacity: 0; transform: translateY(20px); transition: opacity .6s, transform .6s; }
+.scene__cta.is-visible { opacity: 1; transform: none; }
+.scene__cta p { text-shadow: 0 4px 16px rgba(11,20,38,.95); max-width: 52ch; }
+.scene__scroll { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 5; font-family: var(--font-title); letter-spacing: .3em; font-size: var(--fs-label); text-transform: uppercase; color: var(--dorado-700); animation: bob 2s ease-in-out infinite; transition: opacity .4s; }
+.scene__scroll::after { content: "↓"; display: block; text-align: center; }
+@media (orientation: portrait), (max-width: 700px) {
+  .scene { --h: 331vw; --lw: 264.6vw; --ll: -82.2vw; --fog-w: 254vw; --fog-l: -76vw; --fog-h: 85vw; }
+  .scene__glow { left: -3%; top: 6%; width: 107%; height: 26%; }
+  .scene__fade { height: 23%; }
+  .scene__title { top: 41.5%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene__castle, .scene__boats, .scene__title, .scene__cta { opacity: 1 !important; transform: none !important; }
+  .scene__fog { top: 41.7%; opacity: .6; }
+}
+
+/* fog that blends the end of the scene with the rest of the page (Figma "Niebla transición") */
+.scene-transition {
+  position: relative; z-index: 3; height: 34vw; margin: -22vw -10vw -12vw; pointer-events: none;
+  background: url("../img/niebla.png") center / 100% 100% no-repeat;
+  -webkit-mask: linear-gradient(transparent, #000 35%, #000 60%, transparent); mask: linear-gradient(transparent, #000 35%, #000 60%, transparent);
+  opacity: .7;
+}
+.scene-transition::after { content: ""; position: absolute; inset: 40% 0 0; background: linear-gradient(transparent, var(--azul-noche-900) 70%, transparent); }
+@media (orientation: portrait), (max-width: 700px) { .scene-transition { height: 90vw; margin: -55vw -30vw -30vw; } }
