@@ -429,3 +429,7 @@ img.is-missing { opacity: 0; }
 .scene__boats { z-index: 1; }
 
 .scene__boats { transform-origin: 50% 47%; }
+
+/* keep the page exactly as wide as the screen on phones (fixes hidden hamburger) */
+html, body { overflow-x: clip; }
+.scene-transition { margin-left: 0 !important; margin-right: 0 !important; background-size: 170% 100%; }
