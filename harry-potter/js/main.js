@@ -42,7 +42,7 @@
     castle.style.opacity = lerp(0.12, 1, reveal);
     castle.style.transform = `translateY(${drift + (1 - reveal) * 40}px) scale(${lerp(1.04, 1, reveal)})`;
     boats.style.opacity = clamp(sail * 1.6);
-    boats.style.transform = `translateY(${drift + (1 - sail) * 120}px) scale(${lerp(1.06, 1, sail)})`;
+    boats.style.transform = `translateY(${drift + (1 - sail) * 90}px) scale(${lerp(1.08, 0.8, sail)})`; // they sail away: up and smaller
     glow.style.opacity = lerp(0.1, 0.45, reveal);
     fog.style.top = `${lerp(8.3, 41.7, reveal)}%`;
     fog.style.opacity = lerp(1, 0.6, reveal) * (1 - sail);
