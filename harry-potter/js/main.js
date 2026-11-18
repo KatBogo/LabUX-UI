@@ -36,11 +36,13 @@
     const reveal = range(p, 0, 0.3);                      // state 1 -> 2 : the fog lifts, the castle appears
     const sail = range(p, 0.25, 0.65);                    // state 2 -> 3 : the boats glide on the lake
 
-    sky.style.transform = `translateY(${y * 0.3}px)`;                                 // slow layer 0.3x
+    // every layer ends with the SAME offset, so castle, lake and boats line up exactly like the Figma scene
+    const drift = y * 0.3;
+    sky.style.transform = `translateY(${drift}px)`;
     castle.style.opacity = lerp(0.12, 1, reveal);
-    castle.style.transform = `translateY(${y * 0.12}px) scale(${lerp(1.04, 1, reveal)})`; // 0.6x
+    castle.style.transform = `translateY(${drift + (1 - reveal) * 40}px) scale(${lerp(1.04, 1, reveal)})`;
     boats.style.opacity = clamp(sail * 1.6);
-    boats.style.transform = `translateY(${(1 - sail) * 8}%) scale(${lerp(1.08, 1, sail)})`; // 1x, lands on the lake
+    boats.style.transform = `translateY(${drift + (1 - sail) * 120}px) scale(${lerp(1.06, 1, sail)})`;
     glow.style.opacity = lerp(0.1, 0.45, reveal);
     fog.style.top = `${lerp(8.3, 41.7, reveal)}%`;
     fog.style.opacity = lerp(1, 0.6, reveal) * (1 - sail);

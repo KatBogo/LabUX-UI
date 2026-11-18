@@ -377,7 +377,7 @@ img.is-missing { opacity: 0; }
 .scene__layer { position: absolute; top: 0; left: var(--ll); width: var(--lw); height: var(--h); will-change: transform, opacity; }
 .scene__layer img { width: 100%; height: 100%; object-fit: fill; }
 .scene__castle { opacity: .12; transform: scale(1.04); transform-origin: 50% 0; }
-.scene__boats  { opacity: 0;   transform: scale(1.08); transform-origin: 50% 0; }
+.scene__boats  { opacity: 0;   transform: scale(1.06); transform-origin: 50% 60%; }
 .scene__glow { position: absolute; left: 16%; top: 6.25%; width: 68%; height: 37.5%; background: radial-gradient(closest-side, rgba(184,134,43,.9), transparent); filter: blur(60px); opacity: .1; }
 .scene__fog {
   position: absolute; left: var(--fog-l); width: var(--fog-w); height: var(--fog-h); top: 8.3%;
@@ -425,5 +425,5 @@ img.is-missing { opacity: 0; }
 .crest__map:has(.crest__zone--br:is(:hover,:focus-visible)) .crest__glow--br { opacity: 1; }
 
 /* boats a bit lower, above the fog */
-.scene__boats img { transform: translateY(4%); }
+.scene__boats img { transform: none; }
 .scene__boats { z-index: 1; }
