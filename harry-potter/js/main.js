@@ -43,7 +43,7 @@
     boats.style.transform = `translateY(${(1 - sail) * 8}%) scale(${lerp(1.08, 1, sail)})`; // 1x, lands on the lake
     glow.style.opacity = lerp(0.1, 0.45, reveal);
     fog.style.top = `${lerp(8.3, 41.7, reveal)}%`;
-    fog.style.opacity = lerp(1, 0.6, Math.max(reveal, sail));
+    fog.style.opacity = lerp(1, 0.6, reveal) * (1 - sail);
     title.style.opacity = reveal;
     cta.classList.toggle('is-visible', sail > 0.5);
     hint.style.opacity = reveal > 0.15 ? 0 : 1;
