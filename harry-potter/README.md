@@ -1,10 +1,10 @@
-# Hogwarts Experience · Landing page
+# Harry Potter · The Hogwarts Experience
 
 Trabajo 05 · Entrega final (Laboratorio UX/UI). Landing page / one page con tema de Harry Potter, maquetada en HTML5 semántico, CSS3 responsive (Flexbox y CSS Grid) y JavaScript.
 
 ## Qué incluye
-- **Hero con parallax por scroll**: la niebla se levanta, se revela el castillo y luego avanzan los botes (capas con velocidades 0.3x, 0.6x y 1x).
-- Secciones: Hogwarts, Sombrero Seleccionador, escudo con zonas clicables, las 4 casas, precios de la experiencia en Universal, reseñas en carrusel y formulario de contacto.
+- **Hero con parallax por scroll**: la niebla se levanta, aparece el castillo y luego los botes avanzan hacia él. Son las mismas 3 capas y los mismos 3 estados del prototipo en Figma.
+- Secciones: Hogwarts, Sombrero Seleccionador, escudo con zonas clicables (con estela dorada en el hover), las 4 casas, experiencias en Universal, reseñas en carrusel y formulario de contacto.
 - **Responsive**: desktop (1920 px) y móvil (iPhone 16) con media queries y menú hamburguesa.
 - **Accesibilidad**: etiquetas semánticas (`header`, `nav`, `main`, `section`, `article`, `footer`), `alt` descriptivos, foco visible, enlace "Skip to content", `label` en todos los campos, jerarquía `h1`–`h4`, contraste alto y soporte para `prefers-reduced-motion`.
 - Tokens de diseño: las variables CSS de `:root` son las mismas de la colección "COLOR PALETTE" de Figma.

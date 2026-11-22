@@ -7,18 +7,26 @@
   <meta name="description" content="Cross the Black Lake, meet the Sorting Hat, discover the four Hogwarts houses and book your Wizarding World experience at Universal Orlando.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Tipografías de Google Fonts (las mismas de Figma) -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=16">
+
+  <!-- Linkeo el CSS -->
+  <link rel="stylesheet" href="css/styles.css?v=17">
 </head>
 <body>
+  <!-- Link para saltar al contenido (accesibilidad, solo aparece con el teclado) -->
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ===== HEADER ===== -->
+  <!-- Cabecera principal del sitio -->
   <header class="header" id="top">
+    <!-- Logo, al darle clic vuelve arriba -->
     <a class="header__logo" href="#top" aria-label="Hogwarts Experience, back to top">
       <span class="logo" role="img" aria-label="Harry Potter logo"></span>
     </a>
+
+    <!-- Navegador principal -->
     <nav class="nav" aria-label="Main navigation">
+      <!-- Botón hamburguesa, solo se ve en celular -->
       <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -32,9 +40,15 @@
       </ul>
     </nav>
   </header>
+  <!-- Fin de la cabecera -->
 
+
+  <!-- Contenido principal del sitio -->
   <main id="main">
-    <!-- ===== HERO · PARALLAX (long scene, same layers and states as Figma) ===== -->
+
+    <!-- Hero con parallax
+    Son 3 capas como en Figma: cielo, castillo y botes.
+    Con el scroll se quita la niebla, aparece el castillo y los botes avanzan -->
     <section class="scene" aria-labelledby="hero-title">
       <div class="scene__layer scene__sky" aria-hidden="true"><img src="img/hero-fondo.jpg" alt=""></div>
       <div class="scene__glow" aria-hidden="true"></div>
@@ -42,6 +56,7 @@
       <div class="scene__fog" aria-hidden="true"></div>
       <div class="scene__layer scene__boats"><img src="img/hero-botes.png" alt="First-year students crossing the Black Lake in small boats with lanterns"></div>
       <div class="scene__fade" aria-hidden="true"></div>
+      <!-- Título del hero -->
       <div class="scene__title">
         <h1 class="hero__title" id="hero-title">Harry Potter</h1>
         <p class="hero__sub">The Hogwarts Experience</p>
@@ -53,9 +68,13 @@
       </div>
       <p class="scene__scroll" aria-hidden="true">Scroll</p>
     </section>
+    <!-- Fin del hero -->
+
+    <!-- Niebla que une el hero con la siguiente sección -->
     <div class="scene-transition" aria-hidden="true"></div>
 
-    <!-- ===== HOGWARTS ===== -->
+
+    <!-- Info de Hogwarts -->
     <section class="section hogwarts" id="hogwarts" aria-labelledby="hogwarts-title">
       <div class="container hogwarts__grid">
         <div class="hogwarts__text reveal">
@@ -63,19 +82,23 @@
           <span class="ornament" aria-hidden="true"></span>
           <p>Hidden in the Scottish Highlands and invisible to Muggle eyes, Hogwarts has trained young witches and wizards for more than a thousand years. Moving staircases, talking portraits and an enchanted ceiling that mirrors the night sky hide secrets in every corridor.</p>
           <p class="highlight">First-years cross the Black Lake by lantern light, are sorted into one of four houses and spend seven years learning charms, potions, transfiguration and the art of flying a broomstick.</p>
+          <!-- datos -->
           <ul class="stats">
             <li class="stat"><strong>1000+</strong><span>Years of magic</span></li>
             <li class="stat"><strong>4</strong><span>Legendary houses</span></li>
             <li class="stat"><strong>7</strong><span>Years of study</span></li>
           </ul>
         </div>
+        <!-- foto en arco -->
         <figure class="arch reveal">
           <img src="img/hogwarts-castillo.jpg" alt="Hogwarts castle towers rising above the rocks and the forest" loading="lazy">
         </figure>
       </div>
     </section>
+    <!-- Fin de info de Hogwarts -->
 
-    <!-- ===== SORTING HAT ===== -->
+
+    <!-- Sombrero seleccionador -->
     <section class="section hat" id="sorting-hat" aria-labelledby="hat-title">
       <div class="container">
         <header class="section__head reveal">
@@ -83,14 +106,17 @@
           <span class="ornament" aria-hidden="true"></span>
         </header>
         <div class="hat__stage">
+          <!-- globo de texto izquierdo -->
           <blockquote class="speech reveal">
             <p class="label">I see into your mind</p>
             <p class="highlight">“For a thousand years I have rested upon the heads of first-years. I look past what you show the world and into what you truly value.”</p>
           </blockquote>
+          <!-- sombrero con su estela -->
           <figure class="hat__figure">
             <img class="hat__trail" src="img/estela.png" alt="" aria-hidden="true" loading="lazy">
             <img class="hat__img" src="img/sombrero.png" alt="The Sorting Hat, an old brown wizard hat surrounded by blue magical light" loading="lazy">
           </figure>
+          <!-- globo de texto derecho -->
           <blockquote class="speech speech--right reveal">
             <p class="label">Four paths, one heart</p>
             <p class="highlight">“Courage, ambition, wisdom or loyalty. You carry a little of each, but one burns brighter. Tell me who you are, and I shall tell you where you belong.”</p>
@@ -99,8 +125,12 @@
         <div class="center"><a class="btn btn--gold" href="#houses">Put on the hat</a></div>
       </div>
     </section>
+    <!-- Fin del sombrero seleccionador -->
 
-    <!-- ===== CREST ===== -->
+
+    <!-- Escudo de Hogwarts
+    Cada cuarto del escudo es un link que lleva a su casa,
+    y la estela dorada se prende con el hover -->
     <section class="section crest" id="houses" aria-labelledby="crest-title">
       <div class="container">
         <header class="section__head reveal">
@@ -121,8 +151,12 @@
         </nav>
       </div>
     </section>
+    <!-- Fin del escudo -->
 
-    <!-- ===== HOUSES ===== (generated from the same structure) -->
+
+    <!-- Casas: las 4 tienen la misma estructura, solo cambian los colores -->
+
+    <!-- Gryffindor -->
     <article class="section house house--gryffindor" id="gryffindor" aria-labelledby="gryffindor-title">
       <div class="container house__inner">
         <img class="house__crest reveal" src="img/escudo-gryffindor.png" alt="Gryffindor crest with a golden lion on scarlet" loading="lazy">
@@ -147,6 +181,7 @@
       </div>
     </article>
 
+    <!-- Slytherin -->
     <article class="section house house--slytherin" id="slytherin" aria-labelledby="slytherin-title">
       <div class="container house__inner">
         <img class="house__crest reveal" src="img/escudo-slytherin.png" alt="Slytherin crest with a silver serpent on green" loading="lazy">
@@ -171,6 +206,7 @@
       </div>
     </article>
 
+    <!-- Ravenclaw -->
     <article class="section house house--ravenclaw" id="ravenclaw" aria-labelledby="ravenclaw-title">
       <div class="container house__inner">
         <img class="house__crest reveal" src="img/escudo-ravenclaw.png" alt="Ravenclaw crest with a bronze eagle on blue" loading="lazy">
@@ -195,6 +231,7 @@
       </div>
     </article>
 
+    <!-- Hufflepuff -->
     <article class="section house house--hufflepuff" id="hufflepuff" aria-labelledby="hufflepuff-title">
       <div class="container house__inner">
         <img class="house__crest reveal" src="img/escudo-hufflepuff.png" alt="Hufflepuff crest with a black badger on yellow" loading="lazy">
@@ -218,8 +255,10 @@
         <a class="btn btn--gold" href="#houses">Choose another house</a>
       </div>
     </article>
+    <!-- Fin de las casas -->
 
-    <!-- ===== PRICES ===== -->
+
+    <!-- Experiencias y precios -->
     <section class="section prices" id="experience" aria-labelledby="prices-title">
       <div class="container">
         <header class="section__head reveal">
@@ -228,6 +267,7 @@
           <p class="highlight">Walk through Hogsmeade, cross London to Diagon Alley and ride the Hogwarts Express between both worlds.</p>
         </header>
         <div class="plans">
+          <!-- tarjeta -->
           <article class="plan reveal">
             <img src="img/plan-hogsmeade.jpg" alt="Diagon Alley street with the Gringotts dragon on top of the bank" loading="lazy">
             <div class="plan__body">
@@ -239,6 +279,7 @@
               <a class="btn btn--gold" href="#contact">Book now</a>
             </div>
           </article>
+          <!-- tarjeta destacada -->
           <article class="plan plan--featured reveal">
             <img src="img/plan-express.jpg" alt="The red Hogwarts Express locomotive at Platform 9 3/4" loading="lazy">
             <div class="plan__body">
@@ -251,6 +292,7 @@
               <a class="btn btn--gold" href="#contact">Book now</a>
             </div>
           </article>
+          <!-- tarjeta -->
           <article class="plan reveal">
             <img src="img/plan-ministry.jpg" alt="Hogwarts castle towers under a blue sky" loading="lazy">
             <div class="plan__body">
@@ -265,8 +307,10 @@
         </div>
       </div>
     </section>
+    <!-- Fin de experiencias -->
 
-    <!-- ===== REVIEWS ===== -->
+
+    <!-- Reseñas con foto (carrusel) -->
     <section class="section reviews" id="reviews" aria-labelledby="reviews-title">
       <div class="container">
         <header class="section__head reveal">
@@ -276,6 +320,7 @@
         <div class="carousel" aria-roledescription="carousel" aria-label="Traveler reviews">
           <button class="carousel__btn carousel__btn--prev" aria-label="Previous review">‹</button>
           <div class="carousel__viewport">
+            <!-- cada li es una reseña -->
             <ul class="carousel__track">
               <li class="review"><img class="avatar" src="img/review-valentina.jpg" alt="Valentina R." data-initials="VR"><h3>Valentina R.</h3><p class="review__place">Bogotá · Hogwarts Express</p><p class="review__text">“Riding the Hogwarts Express felt like being eleven again. Even the windows tell a story the whole way.”</p><p class="stars" aria-label="5 out of 5 stars">★★★★★</p></li>
               <li class="review"><img class="avatar" src="img/review-mateo.jpg" alt="Mateo G." data-initials="MG"><h3>Mateo G.</h3><p class="review__place">Medellín · Hogsmeade</p><p class="review__text">“The wand chose me at Ollivanders and I may have cried a little. Worth every single galleon.”</p><p class="stars" aria-label="5 out of 5 stars">★★★★★</p></li>
@@ -286,12 +331,15 @@
             </ul>
           </div>
           <button class="carousel__btn carousel__btn--next" aria-label="Next review">›</button>
+          <!-- puntitos, se crean con JS -->
           <div class="carousel__dots" role="tablist" aria-label="Choose review"></div>
         </div>
       </div>
     </section>
+    <!-- Fin de reseñas -->
 
-    <!-- ===== CONTACT FORM ===== -->
+
+    <!-- Formulario de contacto -->
     <section class="section contact" id="contact" aria-labelledby="contact-title">
       <div class="container contact__grid">
         <div class="reveal">
@@ -299,6 +347,7 @@
           <span class="ornament" aria-hidden="true"></span>
           <p>Every great adventure starts with a letter. Tell us who you are and which house calls to you, and our owls will deliver dates, ticket offers and secrets from the Wizarding World straight to your inbox.</p>
         </div>
+        <!-- novalidate-> la validación la hago yo con JS para mostrar mis mensajes -->
         <form class="form reveal" id="owl-form" novalidate>
           <h3 class="title-feat">Send an Owl</h3>
           <div class="field">
@@ -317,13 +366,18 @@
             </select>
           </div>
           <button class="btn btn--gold" type="submit">Send the owl</button>
+          <!-- aquí sale el mensaje de error o de gracias -->
           <p class="form__msg" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
-  </main>
+    <!-- Fin del formulario -->
 
-  <!-- ===== FOOTER ===== -->
+  </main>
+  <!-- Fin del contenido principal -->
+
+
+  <!-- Pie de página -->
   <footer class="footer">
     <span class="logo logo--big" role="img" aria-label="Harry Potter logo"></span>
     <nav aria-label="Footer navigation">
@@ -334,6 +388,7 @@
     <p class="footer__note">Fan project created for academic purposes. Harry Potter characters, names and related indicia are trademarks of Warner Bros. Entertainment Inc. Not affiliated with Universal Orlando Resort. © 2026</p>
   </footer>
 
-  <script src="js/main.js?v=16"></script>
+  <!-- Linkeo el JS -->
+  <script src="js/main.js?v=17"></script>
 </body>
 </html>
