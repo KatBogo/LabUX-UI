@@ -12,7 +12,7 @@ Trabajo 05 · Entrega final (Laboratorio UX/UI). Landing page / one page con tem
 ## Imágenes
 Todas van en la carpeta `img/` con estos nombres (en Figma están listas en el frame **EXPORTAR WEB**):
 
-hero-fondo.jpg, hero-castillo.png, hero-botes.png, niebla.png, hogwarts-escena.jpg, sombrero.png, estela.png, escudo-hogwarts.png, escudo-gryffindor.png, escudo-slytherin.png, escudo-ravenclaw.png, escudo-hufflepuff.png, harry-potter.jpg, hermione-granger.jpg, ron-weasley.jpg, draco-malfoy.jpg, severus-snape.jpg, horace-slughorn.jpg, luna-lovegood.jpg, cho-chang.jpg, filius-flitwick.jpg, cedric-diggory.jpg, nymphadora-tonks.jpg, newt-scamander.jpg, plan-hogsmeade.jpg, plan-express.jpg, plan-ministry.jpg, logo.png
+hero-fondo.jpg, hero-castillo.png, hero-botes.png, niebla.png, hogwarts-castillo.jpg, sombrero.png, estela.png, escudo-hogwarts.png, escudo-gryffindor.png, escudo-slytherin.png, escudo-ravenclaw.png, escudo-hufflepuff.png, harry-potter.jpg, hermione-granger.jpg, ron-weasley.jpg, draco-malfoy.jpg, severus-snape.jpg, horace-slughorn.jpg, luna-lovegood.jpg, cho-chang.jpg, filius-flitwick.jpg, cedric-diggory.jpg, nymphadora-tonks.jpg, newt-scamander.jpg, plan-hogsmeade.jpg, plan-express.jpg, plan-ministry.jpg, logo.png
 
 Fotos de las reseñas (opcionales; si no están se muestran las iniciales): review-valentina.jpg, review-mateo.jpg, review-sofia.jpg, review-daniel.jpg, review-camila.jpg, review-andres.jpg
 
