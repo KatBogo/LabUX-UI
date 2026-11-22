@@ -387,7 +387,8 @@ img.is-missing { opacity: 0; }
 }
 .scene__fade { position: absolute; left: 0; right: 0; bottom: 0; height: 21.7%; background: linear-gradient(transparent, var(--azul-noche-900)); }
 .scene__title { position: absolute; left: 50%; top: 44.2%; width: min(820px, 90vw); transform: translateX(-50%); display: grid; justify-items: center; gap: var(--sp-16); text-align: center; opacity: 0; z-index: 2; }
-.scene__title .hero__title { font-size: clamp(2.6rem, 5vw, 5.5rem); }
+.scene__title .hero__title { font-size: clamp(2.6rem, 5vw, 5.5rem); line-height: 1.05; }
+.hero__sub { margin: calc(var(--sp-8) * -1) 0 0; font-family: var(--font-title); font-weight: 700; font-size: clamp(.95rem, 1.6vw, 1.35rem); letter-spacing: .42em; text-transform: uppercase; color: var(--dorado-700); padding-left: .42em; text-shadow: 0 4px 16px rgba(11,20,38,.95); }
 .scene__cta { display: grid; justify-items: center; gap: var(--sp-24); opacity: 0; transform: translateY(20px); transition: opacity .6s, transform .6s; }
 .scene__cta.is-visible { opacity: 1; transform: none; }
 .scene__cta p { text-shadow: 0 4px 16px rgba(11,20,38,.95); max-width: 52ch; }
@@ -433,3 +434,4 @@ img.is-missing { opacity: 0; }
 /* keep the page exactly as wide as the screen on phones (fixes hidden hamburger) */
 html, body { overflow-x: clip; }
 .scene-transition { margin-left: 0 !important; margin-right: 0 !important; background-size: 170% 100%; }
+@media (max-width: 700px) { .hero__sub { font-size: .8rem; letter-spacing: .26em; padding-left: .26em; white-space: nowrap; } }
